@@ -1,0 +1,18 @@
+syntax="proto3";
+
+service Products {
+  rpc Read (Empty) returns (Response){};
+}
+
+message Empty {}
+
+message Product {
+  int32 id = 1;
+  string name = 2;
+}
+
+message Response{
+  repeated Product data = 1;
+  float freeRam = 2;
+  float freeCpu = 3;
+}
